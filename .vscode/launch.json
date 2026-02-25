@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "MACRBS SANDBOX",
+            "tenant": "e6ff236f-bf5a-4733-8172-fe0a7af4d21e",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "SANDBOX_2026-02-23",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "schemaUpdateMode": "Synchronize",
+            "usePublicURLFromServer": true
+        }
+    ]
+}
