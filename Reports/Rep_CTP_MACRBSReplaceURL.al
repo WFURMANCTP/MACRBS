@@ -7,13 +7,21 @@ report 50100 "CTP MACRBS Replace URL"
 
     dataset
     {
-        dataitem("Media Resources"; "Media Resources")
+        dataitem(RecordLink; "Record Link")
         {
+            trigger OnPreDataItem()
+            begin
+                Window.Open('Processing records... @1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+                RecordCount := 0;
+            end;
+
             trigger OnAfterGetRecord()
             begin
-                if "Media Resources".URL1.Contains(OldSubstring) then begin
-                    "Media Resources".URL1 := "Media Resources".URL1.Replace(OldSubstring, NewSubstring);
-                    "Media Resources".Modify();
+                RecordCount += 1;
+                Window.Update(1, RecordCount);
+                if RecordLink.URL1.Contains(OldSubstring) then begin
+                    RecordLink.URL1 := RecordLink.URL1.Replace(OldSubstring, NewSubstring);
+                    RecordLink.Modify();
                 end;
             end;
         }
@@ -48,4 +56,6 @@ report 50100 "CTP MACRBS Replace URL"
     var
         OldSubstring: Text;
         NewSubstring: Text;
+        Window: Dialog;
+        RecordCount: Integer;
 }

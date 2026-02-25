@@ -10,7 +10,14 @@
   "help": "",
   "url": "",
   "logo": "",
-  "dependencies": [],
+  "dependencies": [
+    {
+     "id": "0a802c7f-3c97-4b7e-847e-3e483f54fb38",
+      "name": "MACB Extension",
+      "publisher": "MACB",
+      "version": "1.3.0.10"
+    }
+  ],
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "27.0.0.0",
